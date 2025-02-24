@@ -11,7 +11,7 @@ import { IContador, Producto } from '../interfaces/contador';
 export class NoSignalComponent implements OnInit {
 
   @Input() producto: Producto = { cantidad: 0, precio: 0 };
-  @Output() enviarDatosAlPadre = new EventEmitter<any>();
+  @Output() productoReturn = new EventEmitter<any>();
 
   ngOnInit(): void {
     // setTimeout(() => {

@@ -1,5 +1,5 @@
-NoSignal<app-noSignal [(producto)]="productoNoSignal"></app-noSignal>
-Signal1<app-comp1 [(producto)]="producto1"></app-comp1>
+NoSignal<app-noSignal [producto]="productoNoSignal" (producto)="productoNoSignal"></app-noSignal>
+Signal1<app-signal1 [(producto)]="producto1"></app-signal1>
 Signal2<app-signal2 [(producto)]="producto2"></app-signal2>
 
 
