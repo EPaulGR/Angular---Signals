@@ -30,5 +30,10 @@ export class AppComponent {
     return total;
   });
 
+  showNoSignalData(data: Producto): void {
+    console.log(data);
+    this.productoNoSignal = data;
+  }
+
 
 }

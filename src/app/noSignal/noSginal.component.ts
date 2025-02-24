@@ -20,13 +20,13 @@ export class NoSignalComponent implements OnInit {
   }
 
   incrementar2() {
-    console.log('incrementar2');
     this.producto.cantidad++;
-    console.log(this.producto.cantidad);
+    this.productoReturn.emit(this.producto);
   }
 
   decrementar2() {
     this.producto.cantidad--;
+    this.productoReturn.emit(this.producto);
   }
 
 
