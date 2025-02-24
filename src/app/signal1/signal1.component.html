@@ -1,4 +1,8 @@
-<button (click)="incrementar()">incrementar</button>
-{{ producto().cantidad }}
-<button (click)="decrementar()">decrementar</button>
-<br>
+<div style="border: solid;">
+  <button (click)="incrementar()">incrementar</button>
+  {{ producto().cantidad }}
+  <button (click)="decrementar()">decrementar</button>
+  <br>
+  
+  <input type="number" [formControl]="cantidadControl">
+</div>

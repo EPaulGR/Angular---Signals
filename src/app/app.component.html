@@ -1,6 +1,11 @@
-NoSignal<app-noSignal [producto]="productoNoSignal" (productoReturn)="showNoSignalData($event)"></app-noSignal>
+<!-- NoSignal<app-noSignal
+[producto]="productoNoSignal"
+(productoChange)="showNoSignalData($event)"></app-noSignal> -->
+NoSignal<app-noSignal [(producto)]="productoNoSignal"></app-noSignal>
+
 Signal1<app-signal1 [(producto)]="producto1"></app-signal1>
 Signal2<app-signal2 [(producto)]="producto2"></app-signal2>
 
 
-total: {{total()}}
+totalSignals: {{total()}} <br>
+totalNoSignal: {{totalNoSignal}}

@@ -12,28 +12,27 @@ import { Signal2Component } from './signal2/signal2.component';
   imports: [
     NoSignalComponent,
     Signal2Component,
-    Signal1Component
+    Signal1Component,
 ]
 
 })
 export class AppComponent {
 
-  productoNoSignal = { cantidad: 10, precio: 10 };
+  productoNoSignal = { cantidad: 15, precio: 15 };
   producto1 = signal<Producto>({ cantidad: 10, precio: 10 });
   producto2 = signal<Producto>({ cantidad: 20, precio: 10 });
-
-
+    
+  get totalNoSignal() {
+    return this.productoNoSignal.cantidad * this.productoNoSignal.precio;
+  }
+  
   total = computed(() => {
+    console.log(this.totalNoSignal);
     const total = 
-      this.producto1().cantidad * this.producto1().precio + 
-      this.producto2().cantidad * this.producto2().precio;
+    this.producto1().cantidad * this.producto1().precio + 
+    this.producto2().cantidad * this.producto2().precio;
     return total;
   });
-
-  showNoSignalData(data: Producto): void {
-    console.log(data);
-    this.productoNoSignal = data;
-  }
-
-
+  
+  
 }
