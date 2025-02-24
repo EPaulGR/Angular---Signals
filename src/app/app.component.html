@@ -8,8 +8,8 @@
     <app-signal2 [(producto)]="producto2"></app-signal2>
     
     <div class="bg-white rounded-md p-2 flex flex-col gap-2">
-      <p><span class="font-bold">totalSignals:</span> {{total()}}</p>
-      <p><span class="font-bold">totalNoSignal:</span> {{totalNoSignal}}</p>
+      <div class="flex justify-between"><div class="font-bold">totalSignals:</div> <div>{{total()}}</div></div>
+      <div class="flex justify-between"><div class="font-bold">totalNoSignal:</div> <div>{{totalNoSignal}}</div></div>
     </div>
   </div>
 </div>
