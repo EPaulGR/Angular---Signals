@@ -15,11 +15,9 @@ export class NoSignalComponent implements OnInit {
   
   ngOnInit(): void {
     // setTimeout(() => {
-      //   this.incrementar2();
-      // }, 1000);
+    //   this.incrementar2();
+    // }, 1000);
   }
-    
-
 
   incrementar2() {
     this.producto.cantidad++;

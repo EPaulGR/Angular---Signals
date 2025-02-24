@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, effect, inject, model } from '@angular/core';
 import { Producto } from '../interfaces/contador';
-import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-signal1',
@@ -10,10 +10,10 @@ import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule } from '@ang
   imports: [
     ReactiveFormsModule,
   ],
-  
 })
 export class Signal1Component {
-
+  
+  producto = model.required<Producto>();
   productoControl = new FormControl<Producto>({ cantidad: 10, precio: 10 });
 
   #formBuilder = inject(FormBuilder);
@@ -30,26 +30,19 @@ export class Signal1Component {
     return this.form.get('precio') as FormControl;
   }
 
-  producto = model.required<Producto>();
-  
-  // effect = effect((onCleanup) => {
-  //   const timer = setTimeout(() => {
-  //     this.incrementar();
-  //   }, 1000);
-  //   onCleanup(() => {
-  //     clearTimeout(timer);
-  //   });
-  // });
+  effect = effect((onCleanup) => {
+    const timer = setTimeout(() => {
+      this.incrementar();
+    }, 1000);
+    onCleanup(() => {
+      clearTimeout(timer);
+    });
+  });
 
   constructor() {
-    // console.log('producto', this.producto());
     this.cantidadControl.valueChanges.subscribe((cantidad) => {
-      // console.log('cantidad', cantidad);
       this.producto.update((producto) => {
-        return {
-          ...producto,
-          cantidad,
-        };
+        return { ...producto, cantidad };
       });
     });
   }
@@ -59,22 +52,15 @@ export class Signal1Component {
   });
 
   incrementar() {
-    this.producto.update( (a) => {
-      return { 
-        ...a,
-        cantidad: a.cantidad+1,
-      };
+    this.producto.update( (producto) => {
+      return { ...producto, cantidad: producto.cantidad+1 };
     });
   }
 
   decrementar() {
-    this.producto.update( (a) => {
-      return { 
-        ...a,
-        cantidad: a.cantidad-1,
-      };
+    this.producto.update( (producto) => {
+      return {  ...producto, cantidad: producto.cantidad-1 };
     });
   }
-
 
 }

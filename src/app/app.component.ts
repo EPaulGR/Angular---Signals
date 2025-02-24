@@ -13,8 +13,7 @@ import { Signal2Component } from './signal2/signal2.component';
     NoSignalComponent,
     Signal2Component,
     Signal1Component,
-]
-
+  ],
 })
 export class AppComponent {
 
@@ -27,11 +26,8 @@ export class AppComponent {
   }
   
   total = computed(() => {
-    console.log(this.totalNoSignal);
-    const total = 
-    this.producto1().cantidad * this.producto1().precio + 
-    this.producto2().cantidad * this.producto2().precio;
-    return total;
+    return this.producto1().cantidad * this.producto1().precio +
+           this.producto2().cantidad * this.producto2().precio;
   });
   
   

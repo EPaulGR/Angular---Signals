@@ -1,4 +1,8 @@
-<button (click)="incrementar()">incrementar</button>
-{{ producto().cantidad }}
-<button (click)="decrementar()">decrementar</button>
-<br>
+<div class="bg-white rounded-md p-2 flex flex-col gap-2">
+  <h1 class="font-bold">Signal 2</h1>
+  <!-- <button (click)="incrementar()">incrementar</button>
+  {{ producto().cantidad }}
+  <button (click)="decrementar()">decrementar</button>
+  <br> -->
+  <input type="number" class="border border-gray-600 rounded-md text-center" [formControl]="cantidadControl">
+</div>

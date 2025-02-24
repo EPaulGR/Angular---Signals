@@ -1,4 +1,7 @@
-<button (click)="incrementar2()">incrementar</button>
-{{ producto.cantidad }}
-<button (click)="decrementar2()">decrementar</button>
-<br>
+<div class="bg-white rounded-md p-2 grid grid-cols-3 gap-2">
+  <button (click)="decrementar2()" class="bg-gray-200 rounded-md border border-gray-300
+  hover:bg-gray-300 active:bg-gray-400">-</button>
+  <span class="text-center">{{ producto.cantidad }}</span>
+  <button (click)="incrementar2()" class="bg-gray-200 rounded-md border border-gray-300
+  hover:bg-gray-300 active:bg-gray-400">+</button>
+</div>

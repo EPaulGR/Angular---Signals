@@ -1,11 +1,15 @@
-<!-- NoSignal<app-noSignal
-[producto]="productoNoSignal"
-(productoChange)="showNoSignalData($event)"></app-noSignal> -->
-NoSignal<app-noSignal [(producto)]="productoNoSignal"></app-noSignal>
-
-Signal1<app-signal1 [(producto)]="producto1"></app-signal1>
-Signal2<app-signal2 [(producto)]="producto2"></app-signal2>
-
-
-totalSignals: {{total()}} <br>
-totalNoSignal: {{totalNoSignal}}
+<div class="w-full h-full flex flex-col items-center justify-center">
+  <div class="bg-gray-200 p-4 flex flex-col gap-4">
+    <h1 class="text-center font-bold">Ejemplo de signals</h1>
+  
+    <app-noSignal [(producto)]="productoNoSignal"></app-noSignal>
+    
+    <app-signal1 [(producto)]="producto1"></app-signal1>
+    <app-signal2 [(producto)]="producto2"></app-signal2>
+    
+    <div class="bg-white rounded-md p-2 flex flex-col gap-2">
+      <p><span class="font-bold">totalSignals:</span> {{total()}}</p>
+      <p><span class="font-bold">totalNoSignal:</span> {{totalNoSignal}}</p>
+    </div>
+  </div>
+</div>
