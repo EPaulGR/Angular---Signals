@@ -1,1 +1,31 @@
-<p>hydrated works!</p>
+<div class="w-full h-full flex flex-col items-center justify-center">
+  <div class="bg-gray-200 p-4 flex flex-col gap-4">
+    <h1 class="text-center font-bold">Ejemplo de Incremental Hydratation</h1>
+    
+    <!-- <button #loadBtn class="target:bg-gray-50 bg-white hover:bg-gray-100 cursor-pointer rounded-md">Load Movies</button> -->
+
+    <!-- @defer (on interaction(loadBtn)) {
+      <p>listo!</p>
+    } -->
+
+    <div class="grid grid-cols-4 gap-4">
+      @for (item of personas(); track $index) {
+        @defer (hydrate on hover) {
+          <img [src]="item.url" [alt]="item.url" class="w-10">
+          <div>{{item.edad}}</div>
+          <div>{{item.nombre}}</div>
+          <select [value]="item.genero">
+            <option value="">Seleccciona un genero</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+          </select>
+        } @placeholder {
+          cargando...
+        }
+      }
+    </div>
+
+
+  </div>
+</div>
+
