@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, effect, inject, model } from '@angular/core';
-import { Producto } from '../interfaces/contador';
 import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Producto } from '../../../core/interfaces/contador';
 
 @Component({
   selector: 'app-signal2',
@@ -30,14 +30,14 @@ export class Signal2Component {
     return this.form.get('precio') as FormControl;
   }
 
-  effect = effect((onCleanup) => {
-    const timer = setTimeout(() => {
-      this.incrementar();
-    }, 1000);
-    onCleanup(() => {
-      clearTimeout(timer);
-    });
-  });
+  // effect = effect((onCleanup) => {
+  //   const timer = setTimeout(() => {
+  //     this.incrementar();
+  //   }, 1000);
+  //   onCleanup(() => {
+  //     clearTimeout(timer);
+  //   });
+  // });
 
     constructor() {
       this.cantidadControl.valueChanges.subscribe((cantidad) => {

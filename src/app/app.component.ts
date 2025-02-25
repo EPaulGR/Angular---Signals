@@ -1,8 +1,5 @@
-import { Component, signal, ChangeDetectionStrategy, computed } from '@angular/core';
-import { Signal1Component } from './signal1/signal1.component';
-import { NoSignalComponent } from './noSignal/noSginal.component';
-import { Producto } from './interfaces/contador';
-import { Signal2Component } from './signal2/signal2.component';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,25 +7,10 @@ import { Signal2Component } from './signal2/signal2.component';
   styleUrl: './app.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    NoSignalComponent,
-    Signal2Component,
-    Signal1Component,
+    RouterOutlet,
+    RouterModule,
   ],
 })
 export class AppComponent {
-
-  productoNoSignal = { cantidad: 15, precio: 15 };
-  producto1 = signal<Producto>({ cantidad: 10, precio: 10 });
-  producto2 = signal<Producto>({ cantidad: 20, precio: 10 });
-    
-  get totalNoSignal() {
-    return this.productoNoSignal.cantidad * this.productoNoSignal.precio;
-  }
-  
-  total = computed(() => {
-    return this.producto1().cantidad * this.producto1().precio +
-           this.producto2().cantidad * this.producto2().precio;
-  });
-  
   
 }
