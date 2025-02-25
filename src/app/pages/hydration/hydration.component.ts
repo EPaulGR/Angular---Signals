@@ -41,7 +41,7 @@ export class HydrationComponent implements OnInit {
     { nombre: 'Clara', edad: 26, genero: 'Femenino', url: 'https://cdn-icons-png.flaticon.com/512/6073/6073873.png' },
     { nombre: 'Daniel', edad: 35, genero: 'Masculino', url: 'https://cdn-icons-png.flaticon.com/512/6073/6073873.png' },
     { nombre: 'Julia', edad: 32, genero: 'Femenino', url: 'https://cdn-icons-png.flaticon.com/512/6073/6073873.png' },
-    { nombre: 'Mario', edad: 37, genero: 'Masculino', url: 'https://cdn-icons-png.flaticon.com/512/6073/6073873.pngd' }
+    { nombre: 'Mario', edad: 37, genero: 'Masculino', url: 'https://cdn-icons-png.flaticon.com/512/6073/6073873.png' }
   ])
   
   ngOnInit(): void {
