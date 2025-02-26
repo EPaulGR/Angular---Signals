@@ -6,7 +6,7 @@ import { SignalsComponent } from './pages/signals/signals.component';
 import { LayoutComponent } from './layout/layout.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'signals', pathMatch: 'full' },
+  { path: '', redirectTo: 'hydration', pathMatch: 'full' },
   {
     path: '', component: LayoutComponent,
     children: [
@@ -15,5 +15,5 @@ export const routes: Routes = [
 
     ]
   },
-  { path: '**', redirectTo: 'signals' },
+  { path: '**', redirectTo: 'hydration' },
 ];
