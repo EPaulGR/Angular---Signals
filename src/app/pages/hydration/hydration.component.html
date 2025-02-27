@@ -6,10 +6,11 @@
     
     <div class="grid grid-cols-4 gap-4 items-center justify-center">
       @for (item of personas(); track $index) {
-        <!-- @defer (hydrate on interaction) { -->
+        <!-- @defer (hydrate on idle) { -->
+        @defer (hydrate on interaction) {
         <!-- @defer (hydrate on viewport) { -->
         <!-- @defer (hydrate on timer(1000)) { -->
-          @defer (hydrate on hover) {
+          <!-- @defer (hydrate on hover) { -->
           <div class="w-10 rounded-full bg-blue-500">
             <img [src]="item.url" [alt]="item.url">
           </div>

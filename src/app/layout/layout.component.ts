@@ -10,6 +10,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
     RouterModule,
   ],
 })
+
 export class LayoutComponent {
-  router = signal<string[]>([ 'hydration', 'signals']);
+  router = signal<string[]>([ 'hydration', 'signals', 'exercises-signals' ]);
 }
